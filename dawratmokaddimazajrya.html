@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dawra1.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>فروع المبادرة</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+</head>
+
+<style>
+    .image-left,
+    .image-right {
+        position: relative;
+        width: 100%;
+    }
+
+    .image-left img {
+        float: left;
+    }
+
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'MadaniArabic-Regular';
+        font-size: 22.2px;
+        color: #53001a;
+    }
+
+    .text11 {
+        top: 50px;
+        left: 230px;
+        font-family: 'MadaniArabic-Regular';
+        font-size: 22.2px;
+        color: #53001a;
+        font-weight: bold;
+    }
+
+    /* Centrer le texte dans les cellules du tableau */
+    .table-bordered-rose {
+        table-layout: fixed; /* Fixer la largeur des colonnes */
+        width: 100%; /* S'assurer que le tableau prend toute la largeur disponible */
+    }
+
+    .table-bordered-rose th,
+    .table-bordered-rose td {
+        text-align: center;
+        vertical-align: middle;
+        padding: 10px; /* Ajouter du padding autour du texte dans les cellules */
+        word-wrap: break-word; /* Empêcher les textes trop longs de déborder */
+    }
+
+    /* Augmenter la taille de la dernière colonne */
+    .table-bordered-rose td:nth-child(7),
+    .table-bordered-rose th:nth-child(7) {
+        width: 16.66%; /* Assurer une largeur uniforme pour la dernière colonne */
+    }
+
+    /* Custom Bullets */
+    .custom-bullets {
+        list-style-type: none; /* Supprimer les puces par défaut */
+        padding-right: 30px; /* Alignement pour RTL */
+        direction: rtl; /* Texte de droite à gauche */
+    }
+
+    .custom-bullets li {
+        position: relative;
+        padding-right: 40px; /* Espace pour l'image à droite */
+        font-size: 19.6px;
+        font-family: 'MadaniArabic-Regular';
+        font-weight: bold;
+        margin-bottom: 10px;
+        line-height: 1.4; /* Ajuste la hauteur de ligne pour un meilleur alignement */
+    }
+
+    .custom-bullets li::before {
+        content: "";
+        position: absolute;
+        right: 0; /* Positionner l'image à droite */
+        top: 0; /* Positionner la puce en haut */
+        transform: translateY(0);
+        width: 28px; /* Ajustez la taille de la puce */
+        height: 28px; /* Ajustez la taille de la puce */
+        background-image: url('images/cheveron.png'); /* Assurez-vous que ce chemin est correct */
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: inline-block; /* Permet au pseudo-élément d'être traité comme un bloc en ligne */
+        margin-bottom: 5px; /* Espace entre la puce et le texte */
+    }
+
+    /* Bullet for alert text */
+    .custom-bullet-alert {
+        position: relative;
+        padding-right: 30px; /* Espace pour la puce */
+        font-family: 'MadaniArabic-Regular';
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        background-color: #ffb3d9 !important; /* Couleur de surlignage rose clair */
+        padding: 10px; /* Ajoute de l'espace autour du texte */
+        border-radius: 5px; /* Optionnel: pour des coins arrondis */
+        color: #53001a; /* Couleur du texte */
+    }
+
+    .custom-bullet-alert::before {
+        content: "";
+        position: absolute;
+        right: 10px; /* Positionner la puce à droite */
+        top: 50%; /* Centrer verticalement */
+        transform: translateY(-50%);
+        width: 25px; /* Ajustez la taille de la puce */
+        height: 25px; /* Ajustez la taille de la puce */
+        background-image: url('images/cheveron.png'); /* Assurez-vous que ce chemin est correct */
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-left: 5px; /* Espace entre la puce et le texte */
+    }
+
+    /* Style pour le texte vertical */
+    .vertical-text {
+        margin-right: 20px;
+        writing-mode: vertical-rl; /* Texte de haut en bas */
+        transform: rotate(180deg) scale(1.5, 1); /* Étire le texte horizontalement */
+        display: flex;
+        align-items: center; /* Centrer le texte verticalement */
+        justify-content: center; /* Centrer le texte horizontalement */
+        white-space: nowrap; /* Empêche le texte de se diviser en plusieurs lignes */
+        font-size: 20px; /* Augmentez la taille de la police pour un effet plus long */
+        font-family: 'Arial Black', sans-serif; /* Changez la police ici */
+        width: 100px; /* Ajustez la largeur selon vos besoins */
+        height: 100px; /* Ajustez la hauteur selon vos besoins */
+        border: 1px solid transparent; /* Pour assurer une taille uniforme */
+    }
+
+</style>
+
+<body>
+    <div class="background-image"></div>
+    <div class="container">
+        <div class="row" style="margin-bottom: 40px;">
+            <div class="image-left" style="margin-left: 10px; margin-top: 20px;">
+                <img src="images/box.png" style="width: 350px; height: 90px;" />
+                <div class="text-overlay text11" style="padding-right: 10px;">دورة المقدمة الزجرية  </div>
+            </div>
+        </div>
+
+       
+    </div>
+</body>
+
+</html>
