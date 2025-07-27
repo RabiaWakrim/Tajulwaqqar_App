@@ -19,7 +19,7 @@
 <!--=========================================================================================================================================================================-->
 <body class=" w-[100%]" >
   <style>
-  /* Thin scrollbar for WebKit browsers (Chrome, Safari) */
+  /* Thin scrollbar: Chrome, Safari */
   .scrollbar-thin::-webkit-scrollbar {
     height: 4px;
   }
@@ -40,11 +40,10 @@
   }
     @media only screen and (max-width: 1024px) {
     .title-icon1::before {
-    content: url('images/box1.png'); /* Replace with your image path */
-        display: inline-block; /* or block, depending on your layout */
-    width: 30px; /* Set your desired width */
-    height: 30px; /* Set your desired height */
-    /* Optional: maintain aspect ratio */
+    content: url('images/box1.png'); 
+    display: inline-block; 
+    width: 30px;
+    height: 30px; 
     object-fit: contain;
     margin-left: 20px;
     }
@@ -63,6 +62,23 @@
     margin-left: 20px;
     }
   }
+   .vertical-text {
+  /* Writing mode */
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;  /* Safari, old Chrome, Android */
+  -moz-writing-mode: vertical-rl;     /* Firefox  */
+  -ms-writing-mode: tb-rl;            /* IE*/
+  -o-writing-mode: vertical-rl;       /* Old Opera  */
+
+
+  /* Transform rotate */
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);  /* Safari, old Chrome */
+  -moz-transform: rotate(180deg);     /* Firefox */
+  -ms-transform: rotate(180deg);      /* IE */
+  -o-transform: rotate(180deg);       /* Old Opera */
+}
+
 </style>
     
     <div class="fixed inset-0 w-full h-full bg-cover bg-center -z-10" style="background-image: url('images/backgroundS.png');" >
@@ -447,21 +463,21 @@
     <tbody >
         <tr>
             <td rowspan="3"  class="bg-pink-300 rounded-[8px] p-[10px]"> المعايير </td>
-            <td style="writing-mode: vertical-rl; transform: rotate(180deg);" class="bg-pink-300 rounded-[8px] p-[10px]"> الدفعة 1 و2 و3 </td>
+            <td  class=" vertical-text bg-pink-300 rounded-[8px] p-[10px] "> الدفعة 1 و2 و3 </td>
             <td colspan="2" class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> الحفظ </td>
             <td colspan="2" class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> المراجعة مع الرفيقة </td>
             <td class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> الحصة الأسبوعية </td>
             <td rowspan="3"  class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> يكون بشكل دوري كل شهرين </td>
         </tr>
         <tr>
-            <td style="writing-mode: vertical-rl; transform: rotate(180deg);" class="bg-pink-300 rounded-[8px] p-[10px]"> الدفعة 4 </td>
+            <td  class=" vertical-text bg-pink-300 rounded-[8px] p-[10px]"> الدفعة 4 </td>
             <td colspan="2" class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> الحفظ </td>
             <td class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> المراجعة مع الرفيقة </td>
             <td class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> مشاهدة درس التجويد</td>
             <td class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> الحصة الأسبوعية </td>
         </tr>
         <tr>
-            <td style="writing-mode: vertical-rl; transform: rotate(180deg);" class="bg-pink-300 rounded-[8px] p-[10px]"> الدفعة 5 </td>
+            <td  class=" vertical-text bg-pink-300 rounded-[8px] p-[10px]"> الدفعة 5 </td>
             <td class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> الحفظ </td>
             <td class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]"> المراجعة مع الرفيقة </td>
             <td class="border-[3px] border-pink-300 bg-white rounded-[8px] p-[10px]">مشاهدة درس التجويد </td>
