@@ -1,4 +1,29 @@
-// Select the navigation bar and home icon elements
+// Function to load external HTML
+function includeHTML(id, file, callback) {
+  fetch(file)
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById(id).innerHTML = data;
+      if (callback) callback();
+    });
+}
+
+// Load navbar and set active link
+includeHTML('navbar', "nav.html", () => {
+  const current = window.location.pathname.split("/").pop();
+  const links = document.querySelectorAll('#navbar a');
+
+  links.forEach(link => {
+
+          if (link.getAttribute("href") === current && link.getAttribute("href") != 'main2.html') {
+      link.parentElement.classList.add("active");
+    }
+
+  });
+
+
+
+  // Select the navigation bar and home icon elements
 const navbar = document.querySelector('nav');
 /**
  * Handles scroll behavior for the navigation bar:
@@ -9,14 +34,13 @@ window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
     // Scrolled state styles
     navbar.classList.remove('lg:bg-transparent');
-    navbar.classList.add('lg:bg-[#ef5689]');
-  //  home.classList.remove('lg:text-[#f26992]');
-  //  home.classList.add('lg:text-[#fae1ec]');
-  } else {
+    navbar.classList.add('lg:bg-[#ef5689]'); 
+
+  }  else {
     // Top-of-page state styles
     navbar.classList.remove('lg:bg-[#ef5689]');
     navbar.classList.add('lg:bg-transparent');
-  }
+  } 
 });
 
 /**
@@ -24,7 +48,7 @@ window.addEventListener('scroll', () => {
  * - Switches between hamburger and close icon
  * - Shows/hides the dropdown menu
  */
-document.getElementById('menu-toggle').addEventListener('click', function () {
+ document.getElementById('menu-toggle').addEventListener('click', function () {
   const menu = document.getElementById('menu');
   // Toggle menu visibility (assuming 'top-[50px]' shows the menu)
   menu.classList.toggle('top-[50px]');
@@ -40,4 +64,11 @@ document.getElementById('menu-toggle').addEventListener('click', function () {
     faSolid.classList.remove('fa-xmark');
     faSolid.classList.add('fa-bars');
   }
+}); 
 });
+
+// Load footer
+includeHTML('footer', "footer.html");
+
+
+
